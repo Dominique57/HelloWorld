@@ -29,7 +29,7 @@ public class Main_Controller : MonoBehaviour
 	/// NETWORKING SHIT RIGHT HERE
 	/////////////////////////////////////////////////////////
 	
-	private static Client c;
+	public static Client c;
 	
 	/////////////////////////////////////////////////////////
 	/// NETWORKING SHIT RIGHT HERE
@@ -658,6 +658,7 @@ public class Main_Controller : MonoBehaviour
 				Main_Controller_def.CloseBorder(GetCountryFromName(value));
 				break;
 			case "Localisation":
+				Instance.OpenNotification ( "Recherche positive: L'adversaire a trouvé le virus ! " , value + " est une région contenant au moins une personne infectée." );
 				Main_Controller_def.Localisation(GetCountryFromName(value));
 				break;
 			case "ResearchSymp":

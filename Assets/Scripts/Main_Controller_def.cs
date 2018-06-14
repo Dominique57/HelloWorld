@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -308,7 +308,7 @@ public class Main_Controller_def : MonoBehaviour {
 		    foundSymptoms.Count == Main_Controller.symptoms.Count &&
 		    Main_Controller.symptoms.Count != 0)
 		{
-			research.Add("Recherche de Transmitions");
+			research.Add("Recherche de Vaccin");
 			powerD -= 20;
 			vaccineFound = true;
 			return true;
@@ -324,6 +324,52 @@ public class Main_Controller_def : MonoBehaviour {
 	}
 
 	#endregion
+	
+	public static void FindSymp()
+	{
+		if (powerD - 6 >= 0)
+		{
+			if (Main_Controller.symptoms.Count != 0)
+			{
+				Main_Controller.Instance.OpenNotification("Résultat",
+					"Apres avoir effectué des recherches, vous avez trouvé" +
+					Main_Controller.symptoms[Random.Range(0, Main_Controller.symptoms.Count)]);
+			}
+			else
+			{
+				research.Add("Recherche de symptome");
+				powerD -= 6;
+			}
+		}
+	}
+
+	public void FindSympButton()
+	{
+		FindSymp();
+	}
+	
+	public static void FindTrans()
+	{
+		if (powerD - 6 >= 0)
+		{
+			if (Main_Controller.symptoms.Count != 0)
+			{
+				Main_Controller.Instance.OpenNotification("Résultat",
+					"Apres avoir effectué des recherches, vous avez trouvé" +
+					Main_Controller.transmitions[Random.Range(0, Main_Controller.transmitions.Count)]);
+			}
+			else
+			{
+				research.Add("Recherche de transmission");
+				powerD -= 6;
+			}
+		}
+	}
+
+	public void FindTransButton()
+	{
+		FindTrans();
+	}
 
 	#endregion
 

@@ -285,6 +285,8 @@ MonoBehaviour:
   StartingHelper: {fileID: 616007446}
   camera: {fileID: 1473229525}
   FadeSpeed: 2
+  TPanel: {fileID: 1489766984}
+  SPanel: {fileID: 1489766983}
   time: 0
   totalSane: 0
   totalInfected: 0
@@ -1523,6 +1525,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1e9a7e4328b37c4085fd550f387e359, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1489766983 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114343657692509338, guid: f1e9a7e4328b37c4085fd550f387e359,
+    type: 2}
+  m_PrefabInternal: {fileID: 1489766982}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1489766984 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114992940290357970, guid: f1e9a7e4328b37c4085fd550f387e359,
+    type: 2}
+  m_PrefabInternal: {fileID: 1489766982}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &1529005489 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114577476482104628, guid: e5163d2affd3ab44eb9b2dbcc29b4495,

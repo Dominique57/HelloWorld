@@ -201,7 +201,6 @@ public class Main_Controller : MonoBehaviour
 
 	void StartTheGame ()
 	{
-		//TODO appel de l'UI demandant a l'utilisateur de selectionner une region
 		//temp solution
         /*
 		Earth.regionlist[0].infected = 1;
@@ -559,8 +558,6 @@ public class Main_Controller : MonoBehaviour
                             Main_Controller_off.powerO += 2;
                         else if (region.infected < 100000 && region.infected % 20000 < 50)
                             Main_Controller_off.powerO += 3;
-                        else if (region.infected < 1000000 && region.infected % 200000 < 50)
-                            Main_Controller_off.powerO += 4;
                     }
 
                     //PowerD generation

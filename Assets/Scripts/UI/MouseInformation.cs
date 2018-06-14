@@ -54,7 +54,7 @@ public class MouseInformation : MonoBehaviour, IPointerEnterHandler, IPointerExi
 			case "Eternuement":
 				return "Eternuements";
 			case "Toux":
-				return "Eternuements";
+				return "Toux";
 			case "Mal_gorge":
 				return "Mal de Gorge";
 			case "Diarrhee":
@@ -87,38 +87,48 @@ public class MouseInformation : MonoBehaviour, IPointerEnterHandler, IPointerExi
 		//Gestion
 		{
 			"Fermeture_temp", 
-			"Coût : " + "\n" + "\n" +
+			"Coût : 10" + "\n" + "\n" +
 			"Ferme temporairement une frontiere d'un pays a l'autre"
 		},
 		{
+			"Boost",
+			"Coût : 12" + "\n" + "\n" +
+			"Vacciner les animaux afin de réduire la transmission animale"
+		},
+		{
 			"Sanitary_campaign",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 15" + "\n" + "\n" +
 			"Envoyer des équipes médicales pour donner le traitement contre le virus à la population"
 		},
 		{
 			"Vaccinate_animals",
-			"Coût : " + "\n" + "\n" +
-			"Vacciner les animaux afin de réduire la transmission autre"
+			"Coût : 10" + "\n" + "\n" +
+			"Vacciner les animaux afin de réduire la transmission animale"
+		},
+		{
+			"Better_Hygiene",
+			"Coût : 20" + "\n" + "\n" +
+			"Vacciner les animaux afin de réduire la transmission animale"
 		},
 		//Recherche
 		{
 			"Recherche_sympt",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 3" + "\n" + "\n" +
 			"Lance une recherche visant les symptomes du virus, retourne un des symptomes du virus, s'il l'a"
 		},
 		{
 			"Recherche_trans",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 3" + "\n" + "\n" +
 			"Lance une recherche visant les transmitions du virus, retourne un des transmitions du virus, s'il l'a"
 		},
 		{
 			"Recherche_anti",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 20" + "\n" + "\n" +
 			"Lance une recherche de l'antidote"
 		},
 		{
 			"Localisation",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 3" + "\n" + "\n" +
 			"Lance la recherche du virus dans le pays selectionne"
 		},
 
@@ -126,27 +136,27 @@ public class MouseInformation : MonoBehaviour, IPointerEnterHandler, IPointerExi
 		//Transmition
 		{
 			"Res_hum",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 10" + "\n" + "\n" +
 			"Le virus devient plus resistent au climat sec et humdide."
 		},
 		{
 			"Res_temp",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 10" + "\n" + "\n" +
 			"Le virus devient plus resistent au chaud et au froid."
 		},
 		{
 			"Res_climat",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 20" + "\n" + "\n" +
 			"Le virus est capable de survivre dans les regions les plus extremes."
 		},
 		{
 			"High_density_res",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 10" + "\n" + "\n" +
 			"Le virus est capable de survivre plus longtemps et de se propager plus rapidement dans les regions à grande population."
 		},
 		{
 			"Infection_animale",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 7" + "\n" + "\n" +
 			"Les porteurs du virus risquent d'infecter les animaux (augmente la transmission autre)"
 		},
 		
@@ -154,62 +164,62 @@ public class MouseInformation : MonoBehaviour, IPointerEnterHandler, IPointerExi
 		//Symptomes
 		{
 			"Eternuement",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 5" + "\n" + "\n" +
 			"Provoque des eternuements, augmentant la transmition et la virulence."
 		},
 		{
 			"Toux",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 5" + "\n" + "\n" +
 			"Provoque une legere toux, augmentant la transmition et la virulence."
 		},
 		{
 			"Mal_gorge",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 7" + "\n" + "\n" +
 			"Provoque une legere toux, augmentant la virulence."
 		},
 		{
 			"Diarrhee",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 10" + "\n" + "\n" +
 			"Provoque des pertes importantes d'eau et des hemoragies internes."
 		},
 		{
 			"Fievre",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 5" + "\n" + "\n" +
 			"Provoque de fortes fièvres qui peuvent être fatales pour les plus fragiles."
 		},
 		{
 			"Crise_car",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 25" + "\n" + "\n" +
 			"Augmente la lethalite de votre virus"
 		},
 		{
 			"Nausee",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 10" + "\n" + "\n" +
 			"Les porteurs du virus ont la nausee"
 		},
 		{
 			"Depression",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 20" + "\n" + "\n" +
 			"Les porteurs du virus sont dépressifs"
 		},
 		{
 			"Grippe",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 15" + "\n" + "\n" +
 			"Les porteurs du virus ont la grippe"
 		},
 		{
 			"Insomnie",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 15" + "\n" + "\n" +
 			"Les porteurs du virus sont sujets à des insomnies"
 		},
 		{
 			"AVC",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 30" + "\n" + "\n" +
 			"Les porteurs du virus risquent de faire un AVC"
 		},
 		{
 			"Paralysie",
-			"Coût : " + "\n" + "\n" +
+			"Coût : 25" + "\n" + "\n" +
 			"Les porteurs du virus sont paralysés"
 		},
 	};

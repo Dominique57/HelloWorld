@@ -229,8 +229,13 @@ public class Main_Controller_def : MonoBehaviour {
 			isUsed = Localisation ( Main_Controller.netRegion );
 			Main_Controller.netRegion = null;
 		}
-		if(isUsed)
+
+		if ( isUsed )
+		{
+			Main_Controller.Instance.OpenNotification ( "Recherche positive ! " , PlayerGameManager.lastContinentClicked + " est une région contenant au moins une personne infectée." );
+			
 			Main_Controller.OnSpellUsed ( "Localisation", PlayerGameManager.lastContinentClicked );
+		}
 	}
 
 	#endregion

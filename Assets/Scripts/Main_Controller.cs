@@ -7,7 +7,14 @@ using Random = UnityEngine.Random;
 
 public class Main_Controller : MonoBehaviour
 {
-	
+
+	public static Main_Controller Instance;
+
+	private void Awake ()
+	{
+		Instance = this;
+	}
+
 	/////////////////////////////////////////////////////////
 	/// Variable
 	/////////////////////////////////////////////////////////
@@ -243,7 +250,7 @@ public class Main_Controller : MonoBehaviour
 		eventsList[4].Init("Accident nucléaire","Un système de refroidissement endommagé mène à une explosion dans une centrale nucléaire en France.", 0f, 0, 0f, 10,  GetCountryFromName("France, Europe"));
 	}
 
-	void OpenNotification(string title, string message)
+	public void OpenNotification(string title, string message)
 	{
 		Title.text = title;
 		Message.text = message;
@@ -518,10 +525,8 @@ public class Main_Controller : MonoBehaviour
                     //update randomEvents
 					if (AI.isSP && !isDefending && eventsList.Count > 0 && !gotAnEvent)
                     {
-						Debug.Log("rdn event " + this.maxRand);
                         if (Random.Range(1, maxRand) == 1)
                         {
-	                        Debug.Log("entered rdn event");
                             tempEvent = eventsList[Random.Range(0, eventsList.Count)];
 							//Debug.Log("before");
 							OpenNotification(tempEvent.title, tempEvent.message);

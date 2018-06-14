@@ -236,7 +236,7 @@ public class Main_Controller_off : MonoBehaviour {
 			Main_Controller.symptoms.Add("Diarrhee");
 			Main_Controller.transmitionHuman += 0.05f;
 			Main_Controller.virulence += 2;
-			Main_Controller.lethality += 0.01f;
+			Main_Controller.lethality += 0.003f;
 			return true;
 		}
 
@@ -262,7 +262,6 @@ public class Main_Controller_off : MonoBehaviour {
 			powerO -= 5;
 			Main_Controller.symptoms.Add("Fievre");
 			Main_Controller.virulence += 3;
-			Main_Controller.lethality += 0.01f;
 			return true;
 		}
 
@@ -287,9 +286,9 @@ public class Main_Controller_off : MonoBehaviour {
 			nauseaUsed = true;
 			powerO -= 10;
 			Main_Controller.symptoms.Add("Nausee");
-			Main_Controller.transmitionHuman += 0.2f;
+			Main_Controller.transmitionHuman += 0.3f;
 			Main_Controller.virulence += 1;
-			Main_Controller.lethality += 0.005f;
+			Main_Controller.lethality += 0.001f;
 			return true;
 		}
 
@@ -343,7 +342,7 @@ public class Main_Controller_off : MonoBehaviour {
 			Main_Controller.symptoms.Add("Flu");
 			Main_Controller.transmitionHuman += 0.3f;
 			Main_Controller.virulence += 2;
-			Main_Controller.lethality += 0f;
+			Main_Controller.lethality += 0.0f;
 			return true;
 		}
 
@@ -396,7 +395,7 @@ public class Main_Controller_off : MonoBehaviour {
 			Main_Controller.symptoms.Add("Stroke");
 			Main_Controller.transmitionHuman -= 0.05f;
 			Main_Controller.virulence += 5;
-			Main_Controller.lethality += 0.1f;
+			Main_Controller.lethality += 0.2f;
 			return true;
 		}
 
@@ -424,7 +423,7 @@ public class Main_Controller_off : MonoBehaviour {
 
 			Main_Controller.virulence += 2;
 			
-			Main_Controller.lethality += 0.2f;
+			Main_Controller.lethality += 0.15f;
 
 			return true;
 		}

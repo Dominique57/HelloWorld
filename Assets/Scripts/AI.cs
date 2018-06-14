@@ -34,8 +34,15 @@ public class AI : MonoBehaviour
 
 		if (!located)
 		{
-			located = Main_Controller_def.Localisation(
-				Main_Controller.Earth.regionlist[Random.Range(0, Main_Controller.symptoms.Count)]);
+			foreach (var continent in Main_Controller.Earth.regionlist)
+			{
+				if (continent.infected != 0)
+				{
+					located = Main_Controller_def.Localisation(continent.countrylist
+						[Random.Range(0, continent.countrylist.Count)]);
+				}
+
+			}
 		}
 		else
 		{

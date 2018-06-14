@@ -135,6 +135,7 @@ public class Main_Controller : MonoBehaviour
 
     public static Country GetCountryFromName(string name)
     {
+	    Debug.Log(name);
         string[] namelist = name.Split(new char[] { ',' });
         if (namelist.Length == 2)
         {
@@ -229,13 +230,13 @@ public class Main_Controller : MonoBehaviour
 		maxRand = maxRandEvent;
 		eventsList=new List<RandomEvent>();
 		eventsList.Add (new RandomEvent());
-		eventsList[0].Init("Tsunami","Un immense tsunami frappe le Japon !", 0f, 0, 0f,10155, GetCountryFromName("Japan, Asia"));
+		eventsList[0].Init("Tsunami","Un immense tsunami frappe le Japon !", 0f, 0, 0f,10155, GetCountryFromName("Japon, Asie"));
 		eventsList.Add (new RandomEvent());
 		rdn = Random.Range (0, 100);
 		eventsList[1].Init("Séisme","Un violent séisme frappe "+ eventcountrylist[rdn].Name+" !", 0f, 0, 0f, (int)(eventcountrylist[rdn].Population*0.00003f), eventcountrylist[rdn]);
 		eventsList.Add (new RandomEvent());
 		rdn = Random.Range (0, 100);
-		eventsList[2].Init("Eruption volcanique","Un volcan éteint depuis des années en Indonesie s'est brusquement réveillé !", 0f, 0, 0f, 162, GetCountryFromName("South East Asia, Asia"));
+		eventsList[2].Init("Eruption volcanique","Un volcan éteint depuis des années en Indonesie s'est brusquement réveillé !", 0f, 0, 0f, 162, GetCountryFromName("Asie du Sud-Est, Asie"));
 		eventsList.Add (new RandomEvent());
 		eventsList[3].Init("Nuage toxique","Un nuage de polution atteint "+eventcountrylist[rdn].Name+" et ses environs. Activités physiques deconseillées.", 0.01f, 1, 0f, 0,  eventcountrylist[rdn]);
 		eventsList.Add (new RandomEvent());
@@ -412,13 +413,13 @@ public class Main_Controller : MonoBehaviour
 	        if (Tcd > 0)
 	        {
 		        Tcd--;
-		        if (Tcd == 0)
+		        if (Tcd == 0 && !AI.isSP)
 			        TPanel.interactable = true;
 	        }
 	        if (Scd > 0)
 	        {
 		        Scd--;
-		        if (Scd == 0)
+		        if (Scd == 0 && !AI.isSP)
 			        SPanel.interactable = true;
 	        }
 
@@ -442,7 +443,7 @@ public class Main_Controller : MonoBehaviour
                         //if that region has 0 infected
                         if (!isDefending && region.infected == 0 && region.Population != 0)
                         {
-                            if (Random.Range(0.2f, 10f) < transmitionOther || (region.Name == "Australia" && Random.Range(0.1f, 5f) < transmitionOther))
+                            if (Random.Range(0.2f, 10f) < transmitionOther || (region.Name == "Australie" && Random.Range(0.1f, 5f) < transmitionOther))
                             {
                                 region.infected = 1;
                                 OnSpellUsed("NewRegionInfected", region.Name + ", " + GetContinent(region).Name);
@@ -460,7 +461,7 @@ public class Main_Controller : MonoBehaviour
                     //update infected
                     if (region.Population != 0 && region.infected != 0)
                     {
-                        long extraInfected = (long)((transmitionHuman * 0.2f + transmitionOther * 0.1f) * (region.infected + 100));
+                        long extraInfected = (long)((transmitionHuman * 0.35f + transmitionOther * 0.1f) * (region.infected + 100));
                         region.infected += extraInfected;
                         region.Population -= extraInfected;
 

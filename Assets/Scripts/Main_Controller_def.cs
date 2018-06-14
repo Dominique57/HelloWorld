@@ -243,7 +243,8 @@ public class Main_Controller_def : MonoBehaviour {
 		{
 			research.Add("Recherche de Symptomes");
 			powerD -= 3;
-			GameObject.Find("Recherche_sympt").GetComponent<Button>().interactable = false;
+			if (!AI.isSP)
+				GameObject.Find("Recherche_sympt").GetComponent<Button>().interactable = false;
 			Main_Controller.Scd = (int)(15-Main_Controller.virulence);
 			//string foundSymp = Main_Controller.symptoms[Random.Range(0,Main_Controller.symptoms.Count)];
 			if (!foundSymptoms.Contains(symptom))
@@ -272,7 +273,8 @@ public class Main_Controller_def : MonoBehaviour {
 		{
 			research.Add("Recherche de Transmitions");
 			powerD -= 3;
-			GameObject.Find("Recherche_trans").GetComponent<Button>().interactable = false;
+			if (!AI.isSP)
+				GameObject.Find("Recherche_trans").GetComponent<Button>().interactable = false;
 			Main_Controller.Tcd = (int)(15-Main_Controller.virulence);
 			//string foundTrans = Main_Controller.transmitions[Random.Range(0,Main_Controller.symptoms.Count)];
 			if (!foundTransmitions.Contains(transmition)){

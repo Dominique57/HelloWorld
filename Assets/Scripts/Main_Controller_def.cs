@@ -72,11 +72,11 @@ public class Main_Controller_def : MonoBehaviour {
 	//TODO: another boost
 	public static bool Boost ()
 	{
-		if ( powerD - 2 >= 0 )
+		if ( powerD - 12 >= 0 )
 		{
-			powerD -= 2;
+			powerD -= 12;
 			
-			Main_Controller.Tcd /= 2;
+			Main_Controller.Scd /= 2;
 
 			isBoostUsed = true;
 
@@ -100,9 +100,9 @@ public class Main_Controller_def : MonoBehaviour {
 
 	public static bool VaccinateAnimals ()
 	{
-		if ( Main_Controller.Tcd == 0 && powerD - 3 >= 0 )
+		if ( Main_Controller.Tcd == 0 && powerD - 10 >= 0 )
 		{
-			powerD -= 3;
+			powerD -= 10;
 			
 			Main_Controller.transmitionOther = 0.1f;
 
@@ -128,10 +128,10 @@ public class Main_Controller_def : MonoBehaviour {
 
 	public static bool SanitaryCampaign(Main_Controller.Country region)
 	{
-		if (powerD - 5 >= 0 && vaccineFound)
+		if (powerD - 15 >= 0 && vaccineFound)
 		{
 			research.Add("Sanitary campaign");
-			powerD -= 5;
+			powerD -= 15;
 			Main_Controller.sanitaryBonus = region.Name;
 			return true;
 		}
@@ -150,18 +150,19 @@ public class Main_Controller_def : MonoBehaviour {
 
 	public static bool BetterHygiene ()
 	{
-		if (Main_Controller.Tcd == 0 && powerD - 5 >= 0)
+		if (Main_Controller.Tcd == 0 && powerD - 20 >= 0)
 		{
-			powerD -= 5;
+			powerD -= 20;
 			
 			Main_Controller.Tcd = 5;
 
 			Main_Controller.transmitionHuman -= 0.1f;
 
 			Main_Controller.transmitionOther -= 0.1f;
+			if (Main_Controller.transmitionOther < 0)
+				Main_Controller.transmitionOther = 0f;
 
 			Main_Controller.virulence -= 2;
-
 			return true;
 		}
 
@@ -186,12 +187,13 @@ public class Main_Controller_def : MonoBehaviour {
 	public static bool found = false;
 	public static bool Localisation(Main_Controller.Country country)
 	{
-		if (country != null && powerD - 2 >= 0 )
+		if (country != null && powerD - 3 >= 0 )
 		{
 			research.Add ( "Localisation" );
-			powerD += 10;
+			powerD -= 3;
 			if ( country.infected != 0 )
 			{
+				powerD += 10;
 				found = true;
 				//NOTIFICATION
 				if (!AI.isSP)
@@ -242,10 +244,10 @@ public class Main_Controller_def : MonoBehaviour {
 
 	public static bool ResearchSymp(string symptom)
 	{
-		if (Main_Controller.Scd == 0 && found && powerD - 2 >= 0 && Main_Controller.symptoms.Count != 0)
+		if (Main_Controller.Scd == 0 && found && powerD - 3 >= 0 && Main_Controller.symptoms.Count != 0)
 		{
 			research.Add("Recherche de Symptomes");
-			powerD -= 2;
+			powerD -= 3;
 			GameObject.Find("Recherche_sympt").GetComponent<Button>().interactable = false;
 			Main_Controller.Scd = (int)(15-Main_Controller.virulence);
 			//string foundSymp = Main_Controller.symptoms[Random.Range(0,Main_Controller.symptoms.Count)];
@@ -271,10 +273,10 @@ public class Main_Controller_def : MonoBehaviour {
 	public static bool foundTrans = false;
 	public static bool ResearchTrans(string transmition)
 	{
-		if (Main_Controller.Tcd == 0 && found && powerD - 2 >= 0 && Main_Controller.transmitions.Count != 0)
+		if (Main_Controller.Tcd == 0 && found && powerD - 3 >= 0 && Main_Controller.transmitions.Count != 0)
 		{
 			research.Add("Recherche de Transmitions");
-			powerD -= 2;
+			powerD -= 3;
 			GameObject.Find("Recherche_trans").GetComponent<Button>().interactable = false;
 			Main_Controller.Tcd = (int)(15-Main_Controller.virulence);
 			//string foundTrans = Main_Controller.transmitions[Random.Range(0,Main_Controller.symptoms.Count)];
@@ -299,13 +301,13 @@ public class Main_Controller_def : MonoBehaviour {
 	public static bool vaccineFound = false;
 	public static bool ResearchAntidote()
 	{
-		if (powerD - 5 >= 0 &&
+		if (powerD - 20 >= 0 &&
 		    foundTransmitions.Count == Main_Controller.transmitions.Count &&
 		    foundSymptoms.Count == Main_Controller.symptoms.Count &&
 		    Main_Controller.symptoms.Count != 0)
 		{
 			research.Add("Recherche de Transmitions");
-			powerD -= 5;
+			powerD -= 20;
 			vaccineFound = true;
 			return true;
 		}

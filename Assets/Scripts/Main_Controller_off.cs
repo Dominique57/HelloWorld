@@ -21,10 +21,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool ResHumUsed = false;
 	public static bool ResHum()
 	{
-		if (!ResHumUsed && powerO - 5 >= 0)
+		if (!ResHumUsed && powerO - 10 >= 0)
 		{
 			ResHumUsed = true;
-			powerO -= 5;
+			powerO -= 10;
 			Main_Controller.transmitions.Add("Resistence a l'humidite");
 			Main_Controller.HumidityRes += 1;
 			return true;
@@ -45,9 +45,9 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool ResTempUsed = false;
 	public static bool ResTemp()
 	{
-		if (!ResTempUsed && powerO - 5 >= 0)
+		if (!ResTempUsed && powerO - 10 >= 0)
 		{
-			powerO -= 5;
+			powerO -= 10;
 			ResTempUsed = true;
 			Main_Controller.transmitions.Add("Resistence a la temperature");
 			Main_Controller.tempRes += 1;
@@ -69,10 +69,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool ResUsed = false;
 	public static bool Res()
 	{
-		if (!ResUsed && powerO - 5 >= 0)
+		if (!ResUsed && powerO - 20 >= 0)
 		{
 			ResUsed = true;
-			powerO -= 5;
+			powerO -= 20;
 			Main_Controller.transmitions.Add("Resistence au climat");
 			Main_Controller.HumidityRes += 3;
 			Main_Controller.tempRes += 3;
@@ -95,10 +95,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool HighDensityResUsed = false;
 	public static bool HighDensityRes()
 	{
-		if (!ResUsed && powerO - 5 >= 0)
+		if (!ResUsed && powerO - 10 >= 0)
 		{
 			HighDensityResUsed = true;
-			powerO -= 5;
+			powerO -= 10;
 			Main_Controller.transmitions.Add("Bonus haute densité");
 			Main_Controller.HighDensityRes += 0.05f;
 			return true;
@@ -151,7 +151,7 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool CoughUsed = false;
 	public static bool Cough()
 	{
-		if (!CoughUsed &&powerO - 5 >= 0)
+		if (!CoughUsed && powerO - 5 >= 0)
 		{
 			CoughUsed = true;
 			powerO -= 5;
@@ -177,10 +177,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool SoreThroatUsed = true;
 	public static bool SoreThroat()
 	{
-		if (!SoreThroatUsed && powerO - 5 >= 0)
+		if (!SoreThroatUsed && powerO - 7 >= 0)
 		{
 			SoreThroatUsed = true;
-			powerO -= 5;
+			powerO -= 7;
 			Main_Controller.symptoms.Add("Mal de Gorge");
 			Main_Controller.virulence += 4;
 			Main_Controller.transmitionHuman += 0.001f;
@@ -203,10 +203,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool HeartFailureUsed = false;
 	public static bool HeartFailure()
 	{
-		if (!HeartFailureUsed && powerO - 20 >= 0)
+		if (!HeartFailureUsed && powerO - 25 >= 0)
 		{
 			HeartFailureUsed = true;
-			powerO -= 20;
+			powerO -= 25;
 			Main_Controller.symptoms.Add("Mal de Gorge");
 			Main_Controller.virulence += 4;
 			Main_Controller.lethality += 0.02f;
@@ -282,10 +282,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool nauseaUsed = false;
 	public static bool Nausea()
 	{
-		if (!nauseaUsed && powerO - 5 >= 0)
+		if (!nauseaUsed && powerO - 10 >= 0)
 		{
 			nauseaUsed = true;
-			powerO -= 5;
+			powerO -= 10;
 			Main_Controller.symptoms.Add("Nausee");
 			Main_Controller.transmitionHuman += 0.2f;
 			Main_Controller.virulence += 1;
@@ -309,10 +309,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool DepressionUsed = false;
 	public static bool Depression()
 	{
-		if (!DepressionUsed && powerO - 5 >= 0)
+		if (!DepressionUsed && powerO - 20 >= 0)
 		{
 			DepressionUsed = true;
-			powerO -= 5;
+			powerO -= 20;
 			Main_Controller.symptoms.Add("Depression");
 			Main_Controller.transmitionHuman -= 0.05f;
 			Main_Controller.virulence += 1;
@@ -336,10 +336,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool FluUsed = false;
 	public static bool Flu()
 	{
-		if (!FluUsed && powerO - 5 >= 0)
+		if (!FluUsed && powerO - 15 >= 0)
 		{
 			FluUsed = true;
-			powerO -= 5;
+			powerO -= 15;
 			Main_Controller.symptoms.Add("Flu");
 			Main_Controller.transmitionHuman += 0.3f;
 			Main_Controller.virulence += 2;
@@ -363,10 +363,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool InsomniaUsed = false;
 	public static bool Insomnia()
 	{
-		if (!InsomniaUsed && powerO - 5 >= 0)
+		if (!InsomniaUsed && powerO - 15 >= 0)
 		{
 			InsomniaUsed = true;
-			powerO -= 5;
+			powerO -= 15;
 			Main_Controller.symptoms.Add("Insomnia");
 			Main_Controller.virulence += 1;
 			Main_Controller.lethality += 0.007f;
@@ -389,10 +389,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool StrokeUsed = false;
 	public static bool Stroke()
 	{
-		if (!StrokeUsed && powerO - 5 >= 0)
+		if (!StrokeUsed && powerO - 30 >= 0)
 		{
 			StrokeUsed = true;
-			powerO -= 5;
+			powerO -= 30;
 			Main_Controller.symptoms.Add("Stroke");
 			Main_Controller.transmitionHuman -= 0.05f;
 			Main_Controller.virulence += 5;
@@ -416,10 +416,10 @@ public class Main_Controller_off : MonoBehaviour {
 	public static bool ParalisysUsed = false;
 	public static bool Paralisys ()
 	{
-		if ( !ParalisysUsed && powerO - 10 >= 0 )
+		if ( !ParalisysUsed && powerO - 25 >= 0 )
 		{
 			ParalisysUsed = true;
-			powerO -= 10;
+			powerO -= 25;
 			Main_Controller.symptoms.Add ( "Paralisys" );
 
 			Main_Controller.virulence += 2;
@@ -445,11 +445,11 @@ public class Main_Controller_off : MonoBehaviour {
 
 	public static bool AttackAnimals ()
 	{
-		if ( !isAttackAnimalsUsed && powerO - 5 >= 0 )
+		if ( !isAttackAnimalsUsed && powerO - 7 >= 0 )
 		{
 			isAttackAnimalsUsed = true;
 
-			powerO -= 5;
+			powerO -= 7;
 			
 			Main_Controller.symptoms.Add ( "Animals" );
 

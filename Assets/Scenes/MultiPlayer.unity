@@ -1911,6 +1911,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FindTransButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1272647874898526, guid: f1e9a7e4328b37c4085fd550f387e359, type: 2}
+      propertyPath: m_Name
+      value: FindTrans
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880480664600836, guid: f1e9a7e4328b37c4085fd550f387e359, type: 2}
+      propertyPath: m_Name
+      value: FindTrans
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1e9a7e4328b37c4085fd550f387e359, type: 2}
   m_IsPrefabParent: 0
@@ -2103,7 +2111,7 @@ GameObject:
   - component: {fileID: 1781875271}
   - component: {fileID: 1781875270}
   m_Layer: 5
-  m_Name: Antidote
+  m_Name: Recherche_anti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
